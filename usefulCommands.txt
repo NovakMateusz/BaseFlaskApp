@@ -1,0 +1,8 @@
+1. activate virtual env:
+source flaskEnv/bin/activate
+
+2. Create txt file with requirements:
+pip3 freeze > requirements.txt
+
+3. Run Server
+python3 code/server.py
