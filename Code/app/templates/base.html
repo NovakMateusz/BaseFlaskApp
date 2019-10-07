@@ -27,9 +27,18 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ url_for('pricing') }}"> Pricing <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('login') }}"> Login </a>
-                        </li>
+                        {% if current_user.is_anonymous %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('login') }}"> Login </a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('images') }}"> File </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('logout') }}"> Logout </a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             <!-- </div> -->

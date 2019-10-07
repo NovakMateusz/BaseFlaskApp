@@ -1,4 +1,7 @@
-1. activate virtual env:
+0. Create virtual environment:
+python3 -m venv flaskEnv
+
+1. Activate virtual env:
 source flaskEnv/bin/activate
 
 2. Create txt file with requirements:
