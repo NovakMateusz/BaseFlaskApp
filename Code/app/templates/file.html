@@ -1,13 +1,83 @@
 {% extends "base.html" %}
 
+{% block styleExtention %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <style>
+
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            display: flow-root;
+            font-size: 80%;
+            font-weight: bold;
+            margin: 0 20% 4%;
+            border-radius: 5rem;
+        }
+
+    .msg {
+        margin-top: 2%;
+    }
+
+    /*@media (min-width: 992px) {
+        form:hover {
+        margin-top: -.25rem;
+        margin-bottom: .25rem;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+        }
+        form:hover ~ .img-thumbnail{
+        margin-top: .25rem;
+        margin-bottom: 0;
+        }
+        form:hover .btn {
+        opacity: 1;
+        }
+    } */
+
+    </style>
+
+{% endblock %}
+
 {% block pageContent %}
 
+    <div class="container py-2">
+        <div class="row">
+            <div class="col-1 col-lg-3">
+            </div>
 
-<div class="container py-4">
+            <div class="col-10 col-lg-6">
+                <form method=post enctype=multipart/form-data id="loginForm" class="bg-light border rounded">
 
-    <h2>How are we?</h2>
-    <p>Bacon ipsum dolor amet burgdoggen elit fugiat cupidatat hamburger, excepteur ad in ground round ea proident incididunt ham hock pork chop. Non tongue meatloaf aliquip, in chicken sint veniam irure ipsum. Ad spare ribs ground round leberkas eiusmod rump beef ribs pastrami. Tail in venison swine, jerky beef ribs sausage. In pastrami elit bresaola, buffalo corned beef drumstick aliquip consectetur meatball magna excepteur velit cow. Filet mignon picanha in, dolore short loin aliquip minim shankle anim est commodo. Adipisicing pancetta short ribs, tempor veniam elit dolore.
-    </p>
+                    <label for="file-upload" class="text-center text-uppercase custom-file-upload"></i>Upload photo</label>
+                    {{ form.file(id="file-upload") }}
+                    {{ form.submit(class="btn btn-block btn-dark text-uppercase") }}
+                </form>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
 
-</div>
+                            {% for message in messages %}
+                                <p class="msg text-center"> {{ message }} </p>
+                            {% endfor %}
+
+                        {% endif %}
+                    {% endwith %}
+
+                {% if render_image %}
+                    <img class="img-thumbnail" src="{{url_for('static', filename=filepath)}}"/>
+                {% endif %}
+
+            </div>
+
+            <div class="col-1 col-lg-3">
+            </div>
+        </div>
+
+
+    </div>
+
 {% endblock %}

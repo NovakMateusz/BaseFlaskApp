@@ -8,7 +8,7 @@ from app import login
 
 class User(UserMixin):
     username = "Admin"
-    password = "Python"
+    password = "123"
     id = 0
 
 # There is only one user "Admin". In the bigger scale implementation,
