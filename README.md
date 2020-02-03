@@ -1,5 +1,5 @@
 # Basic flask application
-Back-end: Flask
+Back-end: Flask  
 Front-end: Bootstrap 4
 
 ## Create virtual environment:
@@ -15,4 +15,4 @@ Front-end: Bootstrap 4
     pip3 install -r /path/to/requirements.txt
 
 ## Start app:
-    python3 code/server.py
+    docker-compose up --build

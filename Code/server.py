@@ -1,4 +1,4 @@
-from app import app
+from Code.app import app
 import os
 import glob
 
@@ -13,6 +13,6 @@ def clear_photos_folder(app):
         os.remove(file)
 
 
-if __name__ == '__main__':
+def create_app():
     clear_photos_folder(app)
-    app.run(debug=True)
+    return app

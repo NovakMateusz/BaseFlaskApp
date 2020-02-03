@@ -1,5 +1,5 @@
 from flask_login import UserMixin
-from app import login
+from Code.app import login
 
 # At this point, the database should be implemented, but for the hackathon
 # purposes I thought is too much, and it might cause additional errors,

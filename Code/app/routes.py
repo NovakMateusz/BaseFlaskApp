@@ -1,8 +1,8 @@
-from app import app, errors
+from Code.app import app, errors
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, PhotoForm
+from Code.app.forms import LoginForm, PhotoForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.model import User
+from Code.app.model import User
 from werkzeug.utils import secure_filename
 import os
 
