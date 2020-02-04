@@ -1,16 +1,16 @@
-Click==7.0
 Flask==1.1.1
-Flask-Login==0.4.1
-Flask-Uploads==0.2.1
-Flask-WTF==0.14.2
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-numpy==1.17.2
-pandas==0.25.1
-python-dateutil==2.8.0
-pytz==2019.2
-six==1.12.0
+
+
+# Server
 Werkzeug==0.16.0
-WTForms==2.2.1
 gunicorn==19.5.0
+
+
+# Testing
+pytest==5.3.5
+pytest-cov==2.8.1
+flake8==3.7.9
+
+
+# Extensions
+flask-debugtoolbar==0.10.0

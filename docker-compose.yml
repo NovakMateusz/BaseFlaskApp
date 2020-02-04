@@ -6,10 +6,11 @@ services:
     command: >
       gunicorn -b 0.0.0.0:8000
         --access-logfile -
-        "Code.server:create_app()"
+        --reload
+        "base_app.app:create_app()"
     environment:
       PYTHONUNBUFFERED: 'true'
     volumes:
-      - '.:/Code'
+      - '.:/base_app'
     ports:
       - '8000:8000'

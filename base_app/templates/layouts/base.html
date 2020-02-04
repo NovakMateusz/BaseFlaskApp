@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
         {% block styleExtention %}
         {% endblock %}
         <title>Flask BaseApp</title>
@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
             <!-- <div class="container"> -->
                 <a class="navbar-brand" href="/">
-                    <img id="logo" src="{{url_for('static', filename='images/brain.svg')}}"/> <span>AI HELPER</span>
+                    <img id="logo" src="{{url_for('static', filename='images/brain.svg')}}"/> <span>BaseApp</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,23 +25,13 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ url_for('pricing') }}"> Pricing <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ url_for('page.pricing') }}"> Pricing <span class="sr-only">(current)</span></a>
                         </li>
-                        {% if current_user.is_anonymous %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('login') }}"> Login </a>
-                            </li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('images') }}"> File </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('logout') }}"> Logout </a>
-                            </li>
-                        {% endif %}
+
+
                     </ul>
                 </div>
-            <!-- </div> -->
+
         </nav>
 
         {% block pageContent %}
