@@ -1,1 +1,1 @@
-# DEBUG = Frue
+# DEBUG = False
